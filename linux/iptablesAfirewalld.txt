@@ -1,0 +1,3 @@
+firewallcmd 是 firewalld 防火墙配置管理工具的 CLI（命令行界面）版本
+
+firewall-config是firewalld 防火墙配置管理工具的 GUI（图形用户界面）版本

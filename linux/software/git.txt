@@ -1,0 +1,40 @@
+初始化：git init
+
+提交日志：git log（或git log --pretty=oneline）
+
+回退版本 git reset --hard HEAD^（回退一个版本 HEAD~100回退100个版本）
+
+回退到git reset --hard 1094a版本
+
+查找以前 commit id ：git reflog
+
+添加到暂存区 git add
+
+提交更改 git commit -m ""
+
+查看状态 git status
+
+查看文本内容 cat 文本
+
+查看工作区和版本库里面最新版本的区别:git diff HEAD -- 文本
+
+出现Please make sure you have the correct access rights and the repository exists. 报错
+第一步，git config --global --list 验证邮箱
+（无密码克隆推送操作）
+第二步，git config --global user.name "yourname"，git config --global user.email myemail@qq.com 设置全局用户名和邮箱，
+第三步，ssh-keygen -t rsa -C "这里换上你的邮箱"，生成秘钥，
+第四步，到git仓库，添加秘钥，
+第五步，在git brash中执行 类似git clone ssh://test2@172.16.7.17:29418/test1.git
+
+克隆推送操作
+第一步，git config --global user.name "yourname"，git config --global user.email myemail@qq.com 设置全局用户名和邮箱，
+第二步，ssh-keygen -t rsa -C "这里换上你的邮箱"，生成秘钥，
+第三步，到git仓库，添加秘钥，
+第四步，在git bash中执行 git clone ssh://test2@172.16.7.17:29418/test1.git
+
+分支：
+创建分支--> git checkout -b dev (dev为分支名,也可以写成两步git bracn dev和git checkout dev)
+切换到master分支-->git checkout master
+合并-->git merge dev
+删除dev分支-->git branch -d dev
+

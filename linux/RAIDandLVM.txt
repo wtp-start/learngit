@@ -1,0 +1,6 @@
+RAID（ Redundant Array of Independent Disks，独立冗余磁盘阵列）
+LVM（ Logical Volume Manager，逻辑卷管理器）
+
+mdadm 命令用于管理 Linux 系统中的软件 RAID 硬盘阵列，格式为“mdadm [模式] <RAID设备名称> [选项] [成员设备名称]
+LVM 可以允许用户对硬盘资源进行动态调整
+增加，扩展，缩小，移除
