@@ -1,0 +1,81 @@
+初始化：git init
+
+提交日志：git log（或git log --pretty=oneline ）
+
+回退版本 git reset --hard HEAD^（回退一个版本 HEAD~100回退100个版本）
+
+回退到git reset --hard 1094a版本
+
+查找以前 commit id ：git reflog
+
+添加到暂存区 git add
+
+提交更改 git commit -m ""  (先add再commit)
+
+查看状态 git status
+
+查看文本内容 cat 文本
+
+查看工作区和版本库里面最新版本的区别:git diff HEAD -- 文本
+
+出现Please make sure you have the correct access rights and the repository exists. 报错
+第一步，git config --global --list 验证邮箱
+（无密码克隆推送操作）
+第二步，git config --global user.name "yourname"，git config --global user.email myemail@qq.com 设置全局用户名和邮箱，
+第三步，ssh-keygen -t rsa -C "这里换上你的邮箱"，生成秘钥，
+第四步，到git仓库，添加秘钥，
+第五步，在git brash中执行 类似git clone ssh://test2@172.16.7.17:29418/test1.git
+
+克隆推送操作
+第一步，git config --global user.name "yourname"，git config --global user.email myemail@qq.com 设置全局用户名和邮箱，
+第二步，ssh-keygen -t rsa -C "这里换上你的邮箱"，生成秘钥，
+第三步，到git仓库，添加秘钥，
+第四步，在git bash中执行 git clone ssh://test2@172.16.7.17:29418/test1.git
+
+分支：
+创建分支--> git checkout -b dev (dev为分支名,也可以写成两步git bracn dev和git checkout dev)
+切换到master分支-->git checkout master
+合并-->git merge dev
+删除dev分支-->git branch -d dev
+
+创建并切换到新的dev分支，可以使用
+git switch -c dev
+直接切换到已有的master分支
+git switch master
+
+解决冲突
+在master下修改提交，又再分支下修改提交。合并时产生冲突
+解决方法：再add和commit一次
+可用git log --graph查看分支合并图
+
+分支管理策略
+请注意--no-ff参数，表示禁用Fast forward
+git merge --no-ff -m "merge with no-ff" dev
+因为本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去
+
+
+修复bug
+我们会通过创建新的bug分支进行修复，然后合并，最后删除；
+当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场；
+在master分支上修复的bug，想要合并到当前dev分支，可以用git cherry-pick <commit>命令，把bug提交的修改“复制”到当前分支，避免重复劳动。
+
+多人协作
+•查看远程库信息，使用git remote -v；
+•本地新建的分支如果不推送到远程，对其他人就是不可见的；
+•从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；
+•在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；
+•建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
+•从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
+
+rebase
+•rebase操作可以把本地未push的分叉提交历史整理成直线；
+•rebase的目的是使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比。
+
+
+tag
+•命令git tag <tagname>用于新建一个标签，默认为HEAD，也可以指定一个commit id；
+•命令git tag -a <tagname> -m "blablabla..."可以指定标签信息；
+•命令git tag可以查看所有标签。
+
+
+
