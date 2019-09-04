@@ -1,0 +1,7 @@
+在文本Hello.java中编辑
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello, world!");
+    }
+}
+在所在目录命令行输入java Hello.java

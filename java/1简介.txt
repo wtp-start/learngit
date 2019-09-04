@@ -1,0 +1,25 @@
+SUN给Java分出了三个不同版本
+•Java SE：Standard Edition
+•Java EE：Enterprise Edition
+•Java ME：Micro Edition
+
+推荐的Java学习路线图如下：
+1.首先要学习Java SE，掌握Java语言本身、Java核心开发技术以及Java标准库的使用；
+2.如果继续学习Java EE，那么Spring框架、数据库开发、分布式架构就是需要学习的；
+3.如果要学习大数据开发，那么Hadoop、Spark、Flink这些大数据平台就是需要学习的，他们都基于Java
+或Scala开发；
+4.如果想要学习移动开发，那么就深入Android平台，掌握Android App开发。
+无论怎么选择，Java SE的核心技术是基础，这个教程的目的就是让你完全精通Java SE！
+
+•JDK：Java Development Kit
+•JRE：Java Runtime Environment
+简单地说，JRE就是运行Java字节码的虚拟机。但是，如果只有Java源码，要编译成Java字节码，就需要JDK，
+因为JDK除了包含JRE，还提供了编译器、调试器等开发工具。
+
+•JSR规范：Java Specification Request
+•JCP组织：Java Community Process
+
+•RI：Reference Implementation
+•TCK：Technology Compatibility Kit
+
+
